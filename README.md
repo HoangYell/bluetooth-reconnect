@@ -1,15 +1,11 @@
 # Bluetooth Auto-Reconnect Utility
+Many Bluetooth audio devices, like the Sony ULT FIELD 1, struggle to maintain a stable connection with PCs. Users often have to repeatedly forget, pair, or power-cycle the device to connect successfully. This utility solves that frustrating problem.
 
-A lightweight utility to automatically reconnect problematic Bluetooth devices (like Sony speakers) on Linux and Windows, specifically solving connection timeout and startup sync issues.
-
-## The Problem
-Many Bluetooth audio devices, especially speakers like the Sony ULT FIELD 1, suffer from connection timeout issues (e.g., `br-connection-page-timeout` on Linux) or simply fail to connect automatically on system boot when the host Bluetooth adapter and the device's link layer state are out of sync.
-
-## The Solution
-This utility solves the issue by:
-1. Automatically finding the device's identifier by its friendly name.
-2. Gracefully disconnecting the device to clear its internal state.
-3. Patiently waiting for the device to fully process the disconnection (the crucial step to prevent timeouts).
+## How It Works
+The utility automates the reconnection process by:
+1. Identifying the device using its friendly name.
+2. Disconnecting the device to clear its internal state.
+3. Waiting for the disconnection to fully process (preventing timeouts).
 4. Reconnecting the device.
 
 ---

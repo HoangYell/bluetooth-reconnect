@@ -1,0 +1,2 @@
+# Ignore the desktop file if it gets copied here
+*.desktop

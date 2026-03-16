@@ -65,6 +65,27 @@ Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 .\bluetooth-reconnect.ps1
 ```
 
+### 2. Setup Auto-Run on Boot (Task Scheduler)
+Because the script requires Administrator privileges, the standard Windows Startup folder won't work without prompting you every time. Instead, use the **Task Scheduler**:
+
+1. Open the Start Menu, search for and open **Task Scheduler**.
+2. On the right panel, click **Create Task...** (Not "Create Basic Task").
+3. **General Tab:**
+   - Name: `Bluetooth Auto-Reconnect`
+   - Check the box at the bottom: **Run with highest privileges**.
+4. **Triggers Tab:**
+   - Click **New...**
+   - Begin the task: **At log on** -> Click OK.
+5. **Actions Tab:**
+   - Click **New...**
+   - Action: **Start a program**
+   - Program/script: `powershell`
+   - Add arguments: `-WindowStyle Hidden -ExecutionPolicy Bypass -File "C:\path\to\your\bluetooth-reconnect.ps1"`
+   *(Make sure to replace the path with where you actually saved the script)* -> Click OK.
+6. Click **OK** on the main Create Task window.
+
+The script will now run silently in the background with necessary permissions every time you log into Windows!
+
 ---
 
 ## Customization

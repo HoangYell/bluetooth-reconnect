@@ -34,7 +34,7 @@ Create `~/.config/autostart/bluetooth-reconnect.desktop`:
 ```ini
 [Desktop Entry]
 Type=Application
-Exec=/path/to/your/bluetooth-reconnect.sh
+Exec=/home/yell/Projects/bluetooth-reconnect/bluetooth-reconnect.sh
 Hidden=false
 NoDisplay=false
 X-GNOME-Autostart-enabled=true
@@ -43,7 +43,7 @@ Comment=Restarts Bluetooth connection on startup to prevent timeouts
 Terminal=false
 ```
 
-Make sure to replace `/path/to/your/bluetooth-reconnect.sh` with the actual path to the script!
+Make sure the path matches where you placed the script!
 
 ---
 
